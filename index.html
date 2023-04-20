@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="/index.css" />
+    <script src='http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
+    <script src="/index.js"></script>
   </head>
   <body>
     <header>
@@ -13,7 +17,7 @@
       ><a class="header__archive" href="/archive">archive</a>
     </header>
     <main>
-      <div class="scrollbar__wrapper">
+      <div class="scrollbar__wrapper sc">
         <div class="scrollbar__vertical"></div>
         <div class="scrollbar__divide"></div>
         <div class="scrollbar__divide"></div>
@@ -22,7 +26,7 @@
         <div class="scrollbar__divide"></div>
         <div class="scrollbar__divide"></div>
       </div>
-      <div class="scrollbar__index-wrapper">
+      <div class="scrollbar__index-wrapper sc">
         <div class="scrollbar__index-divide"><div class="scrollbar__index-number">1</div></div>
         <div class="scrollbar__index-divide"><div class="scrollbar__index-number">2</div></div>
         <div class="scrollbar__index-divide"><div class="scrollbar__index-number">3</div></div>
@@ -31,7 +35,7 @@
         <div class="scrollbar__index-divide"><div class="scrollbar__index-number">6</div></div>
       </div>
       <div class="scrollbar__total-number">/ 6</div>
-      <div class="scrollbar__title-wrapper">
+      <div class="scrollbar__title-wrapper sc">
         <div class="scrollbar__title-divide"><div class="scrollbar__title">Virtual Gear – Adidas, 2022</div></div>
         <div class="scrollbar__title-divide"><div class="scrollbar__title">Chanel: Dusk Till Dawn – Chaos SixtyNine, 2022</div></div>
         <div class="scrollbar__title-divide"><div class="scrollbar__title">Infinite Loop – Silvia Weidenbach, 2022</div></div>
@@ -39,8 +43,53 @@
         <div class="scrollbar__title-divide"><div class="scrollbar__title">Latent Space – Vogue Italia, 2021</div></div>
         <div class="scrollbar__title-divide"><div class="scrollbar__title">BMW i4 Digital Sculpture – BMW, 2020</div></div>
       </div>
-      
-      <div class="home__explore-wrapper closed"><a class="home__button" href="/archive">Explore more work in the Archive</a></div>
+
+      <div class="home__regular-view-wrapper undefined">
+        <div class="home__project-wrapper section1">
+          <div class="home__first-project-wrapper">
+            <a class="home__project-media" href="javascript:;"
+              ><img src="https://cdn.sanity.io/images/xsb736bb/production/7e3858b6bf06473101f6d4a507433e464e3630b7-1920x1080.jpg?max-w=600&amp;max-h=600" alt="Virtual Gear" />
+              <div class="home__mobile-project-title">
+                <span class="home__mobile-year">2022 </span><span class="home__mobile-title">Virtual Gear – </span><span class="home__mobile-title">Adidas</span><span class="home__category">(Fashion Film)</span><span class="home__category">(Advertising)</span>
+              </div></a
+            >
+          </div>
+        </div>
+         <div class="home__project-wrapper section2">
+          <a class="home__project-media" href="javascript:;">
+            <img src="https://cdn.sanity.io/images/xsb736bb/production/ed2a3d379c60d4541abac3e849c53d738bf3d6d8-2418x3000.jpg?max-w=600&amp;max-h=600" alt="Chanel: Dusk Till Dawn" /></a>
+          <!-- <ul class="background">
+            <li style="background-image:url('https://cdn.sanity.io/images/xsb736bb/production/7e3858b6bf06473101f6d4a507433e464e3630b7-1920x1080.jpg?max-w=600&amp;max-h=600')"></li>            
+            <li style="background-image:url('https://cdn.sanity.io/images/xsb736bb/production/ed2a3d379c60d4541abac3e849c53d738bf3d6d8-2418x3000.jpg?max-w=600&amp;max-h=600')"></li>            
+            <li style="background-image:url('https://cdn.sanity.io/images/xsb736bb/production/7e3858b6bf06473101f6d4a507433e464e3630b7-1920x1080.jpg?max-w=600&amp;max-h=600')"></li>            
+            <li style="background-image:url('https://cdn.sanity.io/images/xsb736bb/production/ed2a3d379c60d4541abac3e849c53d738bf3d6d8-2418x3000.jpg?max-w=600&amp;max-h=600')"></li>            
+          </ul> -->
+        </div>
+        <div class="home__project-wrapper section3">
+          <a class="home__project-media" href="javascript:;">
+            <img src="https://cdn.sanity.io/images/xsb736bb/production/ed2a3d379c60d4541abac3e849c53d738bf3d6d8-2418x3000.jpg?max-w=600&amp;max-h=600'" alt="" />
+            <div class="home__mobile-project-title"><span class="home__mobile-year">2022 </span><span class="home__mobile-title">Infinite Loop – </span><span class="home__mobile-title">Silvia Weidenbach</span><span class="home__category">(Installation)</span></div>
+          </a>
+        </div>
+        <div class="home__project-wrapper section4">
+          <a class="home__project-media" href="javascript:;">
+            <img src="https://cdn.sanity.io/images/xsb736bb/production/9306190eb59561d06e8c163f2501cb8898077f7b-1842x1714.jpg?max-w=500" />
+            <div class="home__mobile-project-title"><span class="home__mobile-year">2022 </span><span class="home__mobile-title">Superbloom – </span><span class="home__mobile-title">Burberry</span><span class="home__category">(Installation)</span></div></a
+          >
+        </div>
+        <div class="home__project-wrapper section5">
+          <a class="home__project-media" href="javascript:;">
+            <img src="https://cdn.sanity.io/images/xsb736bb/production/ee14e2ddc9d215a35a50ad6f3cb4833bd80d1f0e-2357x3000.jpg?max-w=600&amp;max-h=600" alt="Latent Space" />
+            <div class="home__mobile-project-title"><span class="home__mobile-year">2021 </span><span class="home__mobile-title">Latent Space – </span><span class="home__mobile-title">Vogue Italia</span><span class="home__category">(Editorial)</span></div></a>
+        </div>
+        <div class="home__project-wrapper section6">
+          <a class="home__project-media" href="javascript:;">
+            <img src="https://cdn.sanity.io/images/xsb736bb/production/86d741be6f3d42de0c228a3cacb96adf195b230b-1920x1080.jpg?max-w=500" alt="">
+            <div class="home__mobile-project-title"><span class="home__mobile-year">2020 </span><span class="home__mobile-title">BMW i4 Digital Sculpture – </span><span class="home__mobile-title">BMW</span><span class="home__category">(Installation)</span></div></a
+          >
+        </div>
+      </div>
+      <div class="home__explore-wrapper closed"><a class="home__button" href="javascript:;">Explore more work in the Archive</a></div>
     </main>
   </body>
 </html>
