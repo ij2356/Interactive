@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <style>
+    body {
+      height: 10000px;
+    }
+    #set-height {
+      display: block;
+    }
+    #v0 {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 800px;
+      margin: 0 auto;
+      left: 50%;
+      transform: translate(-50%, 50%);
+    }
+  </style>
+  <body>
+    <div id="set-height"></div>
+    <p id="time"></p>
+    <video id="v0" tabindex="0" autobuffer="autobuffer" preload="preload">
+      <source type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' src="https://postevand-storage.fra1.cdn.digitaloceanspaces.com/mp4/section-3-desktop-900-264-crf-20-g-1.mp4" />
+    </video>
+    <script>
+      var frameNumber = 0, // start video at frame 0
+        // lower numbers = faster playback
+        playbackConst = 800,
+        // get page height from video duration
+        setHeight = document.getElementById("set-height"),
+        // select video element
+        vid = document.getElementById("v0");
+
+      // dynamically set the page height according to video length
+      vid.addEventListener("loadedmetadata", function () {
+        setHeight.style.height = Math.floor(vid.duration) * playbackConst + "px";
+      });
+
+      // Use requestAnimationFrame for smooth playback
+      function scrollPlay() {
+        var frameNumber = window.pageYOffset / playbackConst;
+        vid.currentTime = frameNumber;
+        window.requestAnimationFrame(scrollPlay);
+      }
+
+      window.requestAnimationFrame(scrollPlay);
+
+      $(window).scroll(function () {
+        position = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다.
+        console.log(position)
+      });
+    </script>
+  </body>
+</html>

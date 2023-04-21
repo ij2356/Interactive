@@ -1,7 +1,13 @@
 
-body{overflow-x: hidden;}
-
-.background li{width: 100%;height: 800px;background-attachment: fixed;max-width: 1531px;display: block;margin:0 auto 30px}
+html{scroll-behavior: smooth;}
+body{overflow-x: hidden;scroll-behavior: smooth;min-width: 1400px;}
+/*pin시 사이즈 변경*/
+.scrollbar__index-wrapper .scrollbar__index-divide:nth-child(1){height: 30vh;}
+.scrollbar__title-wrapper .scrollbar__title-divide:nth-child(1){height:30vh;}
+.scrollbar__index-wrapper .scrollbar__index-divide:nth-child(2){height: 30vh;}
+.scrollbar__title-wrapper .scrollbar__title-divide:nth-child(2){height:30vh;}
+.section3 .home__project-media{height: 100vh !important;}
+.background li{width: 100%;height: 800px;background-attachment: fixed;max-width: 1531px;display: block;margin:0 auto 30px;background-size: cover;}
 .scrollbar__wrapper {
     display: block;
     height: 50vh;
@@ -98,10 +104,13 @@ body{overflow-x: hidden;}
     width: 100%
 }
 
+
+
 .scrollbar__index-divide:first-child {
     height: calc(15vh + 2px);
     margin-top: calc(25vh - 7px)
 }
+
 
 .scrollbar__index-divide:last-child {
     height: calc(15vh + 20px);
@@ -2801,7 +2810,7 @@ strong {
     font-weight: 700
 }
 
-@media screen and (max-width: 750px)and (min-width:1px) {
+/* @media screen and (max-width: 750px)and (min-width:1px) {
     .about__content,.about__content-year,.archive__project-client,.archive__project-title,.archive__project-year {
         font-size:30px;
         line-height: 24px
@@ -2831,7 +2840,7 @@ strong {
         line-height: 24px;
         text-align: center
     }
-}
+} */
 
 ::selection {
     background: hsla(0,0%,100%,.99);
